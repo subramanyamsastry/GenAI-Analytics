@@ -28,7 +28,7 @@ export default function Dashboard() {
 
   const handleSubmitQuery = () => {
     if (currentQuery.trim()) {
-      dispatch(executeQuery(currentQuery));
+      dispatch(executeQuery(currentQuery) as any);
     }
   };
 
@@ -38,7 +38,7 @@ export default function Dashboard() {
 
   const handleRerunQuery = (query: string) => {
     dispatch(selectSuggestion(query));
-    dispatch(executeQuery(query));
+    dispatch(executeQuery(query) as any);
   };
 
   return (
