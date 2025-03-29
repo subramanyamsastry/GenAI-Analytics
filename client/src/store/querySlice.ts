@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { QueryResult, QueryHistoryItem } from "../types";
 import { generateMockQueryResults } from "../data/mockData";
+import { executeQueryApi } from "../lib/deployedApiService";
 
 interface QueryState {
   currentQuery: string;
@@ -23,16 +24,24 @@ export const executeQuery = createAsyncThunk(
   "query/executeQuery",
   async (query: string, { rejectWithValue }) => {
     try {
-      // Simulate API call with timeout
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // In development, use mock data with delay
+      // In production (Netlify), use the deployed API service
+      let results: QueryResult;
       
-      // Random chance of error (10%) to demonstrate error handling
-      if (Math.random() < 0.1) {
-        throw new Error("We couldn't process your query. Please try again or rephrase your question.");
-      }
+      if (import.meta.env.MODE === 'production') {
+        results = await executeQueryApi(query);
+      } else {
+        // Simulate API call with timeout
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        
+        // Random chance of error (10%) to demonstrate error handling
+        if (Math.random() < 0.1) {
+          throw new Error("We couldn't process your query. Please try again or rephrase your question.");
+        }
 
-      // Generate mock results
-      const results = generateMockQueryResults(query);
+        // Generate mock results
+        results = generateMockQueryResults(query);
+      }
       
       // Add to history
       const historyItem: QueryHistoryItem = {
