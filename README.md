@@ -20,7 +20,7 @@ This is a dashboard for analyzing data using simple English questions. Instead o
 4. Your question is saved in the history panel on the right
 5. Click on any past query to run it again
 
-![image](https://github.com/user-attachments/assets/c5ac3d75-cc68-4aee-84c7-6a66466f471a)
+![image](https://github.com/user-attachments/assets/103ea733-d003-414b-a51d-676a848f775e)
 
 ## Pages
 
