@@ -19,6 +19,7 @@ This is a dashboard for analyzing data using simple English questions. Instead o
 3. View the results in charts and read the insights below
 4. Your question is saved in the history panel on the right
 5. Click on any past query to run it again
+
 ![image](https://github.com/user-attachments/assets/c5ac3d75-cc68-4aee-84c7-6a66466f471a)
 
 ## Pages
