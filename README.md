@@ -4,6 +4,12 @@
 
 This is a dashboard for analyzing data using simple English questions. Instead of writing complex code or queries, you can just type a question like "Show me sales data for last month" and get charts and insights.
 
+## Screenshot
+
+![Dashboard Screenshot](screenshots/dashboard_screenshot.png)
+
+*Screenshot of the GenAI Analytics Dashboard homepage*
+
 ## Main Features
 
 - **Ask Questions in Plain English**: Type your question in the search box at the top
